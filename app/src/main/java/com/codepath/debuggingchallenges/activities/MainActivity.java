@@ -1,8 +1,8 @@
 package com.codepath.debuggingchallenges.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.codepath.debuggingchallenges.R;
@@ -16,13 +16,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void launchActivity(Class klass) {
-        Intent intent = new Intent(this, klass);
+        Intent intent = new Intent(MainActivity.this, klass);
         startActivity(intent);
     }
 
-    public void launchCurrentDayActivity(View view) {
-        launchActivity(CurrentDayActivity.class);
-    }
+    // there is a problem here
+    public void launchCurrentDayActivity(View view) { launchActivity(CurrentDayActivity.class); }
 
     public void launchMoviesActivity(View view) {
         launchActivity(MoviesActivity.class);
@@ -35,4 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public void launchToolbarActivity(View view) {
         launchActivity(ToolbarActivity.class);
     }
+
+    // search history activity doesn't exist
+    // public void launchSearchHistoryActivity(View view){ launchActivity(Se);}
 }

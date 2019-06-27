@@ -17,7 +17,9 @@ public class CurrentDayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_day);
         tvDay = (TextView) findViewById(R.id.tvDay);
-        tvDay.setText(getDayOfMonth());
+        tvDay.setText(Integer.toString(getDayOfMonth()));
+        // the problem was in line 20 when setText expected a String but getDayOfMonth() gave it an int
+        // type casting was needed
     }
 
     private int getDayOfMonth() {

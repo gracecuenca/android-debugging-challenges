@@ -11,6 +11,7 @@ public class ChangeBackgroundActivity extends AppCompatActivity {
 
     private int oldColor = Color.BLUE;
 
+    // this runs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,8 @@ public class ChangeBackgroundActivity extends AppCompatActivity {
     }
 
     public void onGoClick(View view) {
+        // issue here was al in the .xml file -> making the button clickable and changing
+        // the name to match the java file
         View mainView = findViewById(android.R.id.content);
         mainView.setBackgroundColor(getNextColor());
     }
